@@ -14,8 +14,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh "docker build -t linabenmoussa150/angulardockerproject:${DOCKER_TAG} -f /var/lib/jenkins/workspace/angular-jenkins/Dockerfile .
-"
+                sh "docker build -t linabenmoussa150/angulardockerproject:${DOCKER_TAG} ."
             }
         }
         stage('DockerHub Push') {

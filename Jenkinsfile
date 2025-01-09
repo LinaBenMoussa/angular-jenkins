@@ -28,7 +28,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sshagent(credentials: ['vagrant_ssh']) {
-                    sh "ssh-keyscan -H 192.168.1.162 >> ~/.ssh/known_hosts"
+                    sh "ssh-keyscan -H 192.168.250.72 >> ~/.ssh/known_hosts"
                     sh "ssh -o StrictHostKeyChecking=no vagrant@192.168.1.162 'sudo docker run linabenmoussa150/angulardockerproject:${DOCKER_TAG}'"
                 }
             }
